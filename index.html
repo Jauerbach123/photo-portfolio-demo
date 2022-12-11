@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖼️ Photo Portfolio Demo </title>
+    <script defer src="script.js"></script>
+
+    <style>
+        body {
+            max-height: 100vh;
+            width: 100vw;
+            background-color: black;
+            margin: 0rem;
+            overflow: hidden;
+        }
+
+        #image-track {
+            cursor: pointer;
+            display: flex;
+            gap: 4vmin;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            user-select: none;
+            /* -- Prevent image highlighting -- */
+            transition-timing-function: ease-in-out;
+            transition-property: all;
+
+        }
+
+        #pointer {
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            /* transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+            animation: slide 2s infinite;
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation-iteration-count: 5;
+            /* animation-direction: alternate; */
+        }
+
+        @keyframes slide {
+            from {
+                left: 50%;
+                transform: rotateZ(10deg);
+            }
+
+            50% {
+                left: 48%;
+                transform: rotateZ(-30deg);
+            }
+
+            to {
+                left: 50%;
+                transform: rotateZ(0deg);
+            }
+        }
+
+        #image-track>.image {
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+
+        <img class="image" src="images/mehdi-messrro-yef79KkAguA-unsplash.jpg" draggable="false" />
+        <img class="image" src="images/mike-kenneally-tNALoIZhqVM-unsplash.jpg" draggable="false" />
+        <img class="image" src="images/anton-lammert-oF-QagYQaCM-unsplash.jpg" draggable="false" />
+        <img class="image" src="images/andrew-meehan-WvmrW1mYino-unsplash.jpg" draggable="false" />
+        <!-- <img class="image"
+            src="sebastian-knoll--FDxWZvj_A8-unsplash.jpg"
+            draggable="false" /> -->
+        <img class="image"
+            src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80"
+            draggable="false" />
+        <img class="image"
+            src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80"
+            draggable="false" />
+    </div>
+
+    <h2 id="pointer">👆</h2>
+</body>
+
+</html>
