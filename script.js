@@ -1,5 +1,4 @@
 const track = document.getElementById("image-track");
-const pointer = document.getElementById("pointer");
 setTimeout(()=>{document.body.removeChild(pointer)}, "10000")
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
